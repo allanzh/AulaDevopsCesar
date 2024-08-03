@@ -11,3 +11,6 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
+  cypress-run:
+    steps:
+      - uses: cypress-io/github-action@v6
