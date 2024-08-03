@@ -108,7 +108,7 @@ describe('Cadastro Simples de Usuário', () => {
       },
       failOnStatusCode: false
     }).should((response) => {
-      expect(response.status).to.eq(200); //add falha para testar print
+      expect(response.status).to.eq(400); //add falha para testar print
       expect(response.body).to.have.property('message', 'Usuário não encontrado');
     })
   })
