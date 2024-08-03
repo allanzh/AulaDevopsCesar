@@ -1,5 +1,5 @@
 name: Cypress Tests Run on Pipeline
-
+run-name: Cypress Tests Run on Pipeline
 on: [push]
 
 jobs:
@@ -8,8 +8,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: install dependencies
+        run: npm install
+
+      - name: cypress install
+        uses: cypress-io/github-action@v6
+        with:
+          install: true
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm i
-          start: npx cypress run
+          runTests: true
